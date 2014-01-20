@@ -14,6 +14,8 @@ before_install:
   # only update the sdk for the tools and platform-tools (1,2) and whatever api level
   # you are building for android (run "android list sdk" to get the full list.  9 = 2.3.3 or API level 10
   - android list sdk
+  # Do you accept the license 'android-sdk-license-bcbbd656' [y/n]:
+  - echo -e "y\n" > accept.txt
   - android update sdk --filter platform-tools,android-19 --no-ui --force
   - ls ${ANDROID_HOME}/platforms
   - cd ./AndroidAnnotationsExample
